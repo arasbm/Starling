@@ -68,7 +68,7 @@ foreach ($tweets as &$value){
 <link href="/Starling/css/heatmap.css" media="screen" rel="stylesheet" type="text/css" />
 
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<title>heatmap.js GMaps Heatmap Layer</title>
+<title>Starling Heatmap Layer</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" type="image/png" href="http://www.patrick-wied.at/img/favicon.png" />
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -76,21 +76,12 @@ foreach ($tweets as &$value){
 </head>
 <body>
 <div id="main">
-			<h1>GMaps Heatmap Overlay</h1>
+			<h1>Heatmap Overlay</h1>
 			<a href="http://www.patrick-wied.at/static/heatmapjs/" title="heatmap.js">Back to the project page</a><br /><br />
 			<div id="heatmapArea">
 			
 			</div>
-			<div id="configArea">
-				<h2>Sidenotes</h2>
-				This is a demonstration of a canvas heatmap gmaps overlay<br /><br />
-				<strong>Note: this is an early release of the heatmap layer. Please feel free to <a href="https://github.com/pa7/heatmap.js" target="_blank">contribute patches</a>. (e.g: correct datapoint pixels after dragrelease (in draw))</strong>
-				<div id="tog" class="btn">Toggle HeatmapOverlay</div>
-				<div id="gen" class="btn">Add 5 random lat/lng coordinates</div>
-			</div>
 			
-<div style="position:absolute;width:940px;top:750px;text-align:center;"><a href="http://www.patrick-wied.at/static/heatmapjs/">heatmap.js</a> by <a href="http://www.patrick-wied.at" target="_blank">Patrick Wied</a></div>
-
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
 <script type="text/javascript" src="libs/heatmapjs/heatmap.js"></script>
@@ -122,7 +113,7 @@ window.onload = function(){
 	map = new google.maps.Map(document.getElementById("heatmapArea"), myOptions);
 	
 	heatmap = new HeatmapOverlay(map, {"radius":15, "visible":true, "opacity":60});
-	
+	/*
 	document.getElementById("gen").onclick = function(){
 		var x = 5;
 		while(x--){
@@ -136,10 +127,12 @@ window.onload = function(){
 		}
 	
 	};
-	
+        */
+	/*
 	document.getElementById("tog").onclick = function(){
 		heatmap.toggle();
 	};
+        */
 	
 	var testData={
     		max: 46,

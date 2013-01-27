@@ -82,12 +82,13 @@ echo $js_array;
   <head>
     <title>Starling: predicting flu!</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href="/Starling/css/home.css" media="screen" rel="stylesheet" type="text/css" />
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 25px; padding: 0 }
       #map_canvas { height: 100% }
     </style>
-  <h1>Staling</h1>
+  <h1>Starlring</h1>
   <div>
     <button id="city-button" class="citybutton">New York, NY</button>
   </div>
