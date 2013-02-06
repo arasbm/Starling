@@ -74,55 +74,6 @@ def tweet_features(sent):
 			features[word] =  True
 	return features
 
-def write_line(file_, line_):
-    tokens = string.split(line_, ';@;')
-    #tweet_text = tokens[4]
-    try:
-        raw_tweet_text_ = ''
-        time_ = tokens[0]
-        if len(tokens) == 6:
-            raw_tweet_text_ = tokens[5]
-    except IndexError:
-        print 'Unexpected line!!!'
-    else:
-        #print raw_tweet_text_
-        tweet_text = re.sub(r'\s*http://.+\s*', '', raw_tweet_text_)
-        if tweet_text != '':
-            #print "original tweet:", tweet_text 
-            featset = tweet_features(tweet_text)
-            #compute the label
-            label_val = classifier.classify(featset)
-            prob_val = classifier.prob_classify(featset)
-            #print prob_val.prob('1')
-            #print "polrity(", tweet_text, ")=", classifier.classify(featset)
-            #print "---------------------------------"
-            file_.write(time_ + ';@;' + tokens[2] + ',;@;' + tokens[1] + ';@;' +
-                        tokens[5][:-1] + ';@;' + label_val + ';@;' +
-                        str(prob_val.prob('1')) + "\n")
-
-def analyze_raw_data(file_):
-    try:
-        fpsen = open("labelled_tweets.txt", 'a')
-    except IOError:
-        print 'cannot open files', 'usage_data.txt'
-    else:
-        try:
-            text_file = open(file_)
-        except IOError:
-            print 'cannot open', 'raw_data.txt'
-        else:
-	        #first read the whole file first until reach the end
-            cnt_ = 0
-            for line_ in text_file:
-                write_line(fpsen, line_)
-                cnt_ += 1
-                if cnt_ > 10000:
-                    print "process 10k lines"
-                    cnt_ = 0
-	    fpsen.flush()
-	    fpsen.close()
-        text_file.close()
-
 postexts  = []
 negtexts  = []
 
@@ -156,7 +107,6 @@ classifier = NaiveBayesClassifier.train(train_set)
 #print 'accuracy: ', classify.accuracy(classifier,test_set)
 #classifier.show_most_informative_features(30)
 #print 'labels:',classifier.labels()
-#analyze_raw_data('geo-flu.txt') <-----       
 #while(1):
 #  featset = tweet_features(raw_input("Enter a tweet to classify: "))
 #  print classifier.classify(featset)
