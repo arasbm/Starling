@@ -14,4 +14,4 @@ You can check running version of the web app from the following link:
 
 http://www.csc.uvic.ca/~jahan/codes/Starling/welcome.php
 
-**Drop me a note at k.jahanbakhsh@gmail.com if you have any questions.
+**Please drop us a note at "k DOT jahanbakhsh AT gmail DOT com" if you have any questions.
